@@ -9,6 +9,7 @@ const year = document.querySelector(".journey__year");
 const compDescription = document.getElementById("first__part");
 const myDescription = document.getElementById("second__part");
 const allHeadings = document.querySelectorAll("h2");
+const lightMode = document.querySelectorAll(".light-mode");
 
 ionos.addEventListener("click", function () {
   img.src = `ionos.png`;
@@ -57,49 +58,53 @@ document.getElementById("accenture-btn").addEventListener("click", function () {
 
 let isLightMode = false;
 
-document.getElementById("light-mode").addEventListener("click", function () {
-  if (isLightMode === false) {
-    isLightMode = true;
-    document.documentElement.style.backgroundColor = "#f1f5f9";
-    document.querySelector(".hero__title").style.color = "#1e293b";
-    allHeadings.forEach(function (heading) {
-      heading.style.color = "#1e293b"; // You can replace this with your desired color
-    });
-    document.getElementById("accenture-btn").src = `accenture-logo.svg`;
-    document.getElementById("journey__img").src = `accenture-logo.svg`;
-    year.textContent = "2018";
-    compDescription.innerHTML =
-      "<strong>Accenture</strong> is a global professional services company that provides a wide range of services and solutions in strategy, consulting, digital, technology, and operations. The company helps organizations to improve their performance and create sustainable value for their stakeholders.";
-    myDescription.innerHTML =
-      "As a dynamic <strong>Market Research Analyst</strong>, I played a pivotal role in a groundbreaking project initiated by Google. Acknowledged as a pioneer team, we spearheaded the evaluation of forms and surveys, meticulously determining their viability and impact. My expertise contributed to the strategic filtration process, ensuring only the most relevant and impactful data enriched the project's trajectory.";
+lightMode.forEach(function (button) {
+  button.addEventListener("click", function () {
+    if (isLightMode === false) {
+      isLightMode = true;
+      document.documentElement.style.backgroundColor = "#f1f5f9";
+      document.querySelector(".hero__title").style.color = "#1e293b";
+      allHeadings.forEach(function (heading) {
+        heading.style.color = "#1e293b"; // You can replace this with your desired color
+      });
+      document.getElementById("accenture-btn").src = `accenture-logo.svg`;
+      document.getElementById("journey__img").src = `accenture-logo.svg`;
+      year.textContent = "2018";
+      compDescription.innerHTML =
+        "<strong>Accenture</strong> is a global professional services company that provides a wide range of services and solutions in strategy, consulting, digital, technology, and operations. The company helps organizations to improve their performance and create sustainable value for their stakeholders.";
+      myDescription.innerHTML =
+        "As a dynamic <strong>Market Research Analyst</strong>, I played a pivotal role in a groundbreaking project initiated by Google. Acknowledged as a pioneer team, we spearheaded the evaluation of forms and surveys, meticulously determining their viability and impact. My expertise contributed to the strategic filtration process, ensuring only the most relevant and impactful data enriched the project's trajectory.";
 
-    document
-      .getElementById("accenture-btn")
-      .addEventListener("click", function () {
-        img.src = `accenture-logo.svg`;
-        year.textContent = "2018";
+      document
+        .getElementById("accenture-btn")
+        .addEventListener("click", function () {
+          img.src = `accenture-logo.svg`;
+          year.textContent = "2018";
+        });
+      updateColors();
+    } else {
+      isLightMode = false;
+      document.documentElement.style.backgroundColor = "#070a13";
+      document.querySelector(".hero__title").style.color = "#94a3b8";
+      allHeadings.forEach(function (heading) {
+        heading.style.color = "#fff"; // You can replace this with your desired color
       });
-  } else {
-    isLightMode = false;
-    document.documentElement.style.backgroundColor = "#070a13";
-    document.querySelector(".hero__title").style.color = "#94a3b8";
-    allHeadings.forEach(function (heading) {
-      heading.style.color = "#fff"; // You can replace this with your desired color
-    });
-    document.getElementById("accenture-btn").src = `acn-logo.png`;
-    document.getElementById("journey__img").src = `acn-logo.png`;
-    year.textContent = "2018";
-    compDescription.innerHTML =
-      "<strong>Accenture</strong> is a global professional services company that provides a wide range of services and solutions in strategy, consulting, digital, technology, and operations. The company helps organizations to improve their performance and create sustainable value for their stakeholders.";
-    myDescription.innerHTML =
-      "As a dynamic <strong>Market Research Analyst</strong>, I played a pivotal role in a groundbreaking project initiated by Google. Acknowledged as a pioneer team, we spearheaded the evaluation of forms and surveys, meticulously determining their viability and impact. My expertise contributed to the strategic filtration process, ensuring only the most relevant and impactful data enriched the project's trajectory.";
-    document
-      .getElementById("accenture-btn")
-      .addEventListener("click", function () {
-        img.src = `acn-logo.png`;
-        year.textContent = "2018";
-      });
-  }
+      document.getElementById("accenture-btn").src = `acn-logo.png`;
+      document.getElementById("journey__img").src = `acn-logo.png`;
+      year.textContent = "2018";
+      compDescription.innerHTML =
+        "<strong>Accenture</strong> is a global professional services company that provides a wide range of services and solutions in strategy, consulting, digital, technology, and operations. The company helps organizations to improve their performance and create sustainable value for their stakeholders.";
+      myDescription.innerHTML =
+        "As a dynamic <strong>Market Research Analyst</strong>, I played a pivotal role in a groundbreaking project initiated by Google. Acknowledged as a pioneer team, we spearheaded the evaluation of forms and surveys, meticulously determining their viability and impact. My expertise contributed to the strategic filtration process, ensuring only the most relevant and impactful data enriched the project's trajectory.";
+      document
+        .getElementById("accenture-btn")
+        .addEventListener("click", function () {
+          img.src = `acn-logo.png`;
+          year.textContent = "2018";
+        });
+      updateColorsBack();
+    }
+  });
 });
 
 document.getElementById("burger-icon").addEventListener("click", function () {
@@ -123,3 +128,23 @@ document
     document.querySelector(".hero__container").classList.remove("hidden");
     document.querySelector(".about__container").style = "display:flex";
   });
+
+const descriptionTwo = document.querySelectorAll(".description__two");
+const projectName = document.querySelectorAll(".project__name");
+
+const updateColors = function () {
+  descriptionTwo.forEach(function (description) {
+    description.style.color = "#1e293b";
+  });
+  projectName.forEach(function (description) {
+    description.style.color = "#1e293b";
+  });
+};
+const updateColorsBack = function () {
+  descriptionTwo.forEach(function (description) {
+    description.style.color = "#f1f5f9";
+  });
+  projectName.forEach(function (description) {
+    description.style.color = "#f1f5f9";
+  });
+};

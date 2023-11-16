@@ -139,6 +139,35 @@ h2 {
   overflow-x: hidden;
 }
 
+.project__divider {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.project__divider img {
+  opacity: 0.6;
+}
+.project__divider img:hover {
+  opacity: 1;
+}
+
+.project__content {
+  width: 90%;
+}
+.project__content h3 {
+  color: #f1f5f9;
+}
+.description__one {
+  font-size: 1rem;
+}
+.description__two {
+  font-size: 1rem;
+  color: #f1f5f9;
+}
+
 .mobile-view__nav a {
   padding: 10px;
   color: #475569;
@@ -374,6 +403,7 @@ hr {
 
 .projects__description {
   font-size: 0.75rem;
+  margin-top: -2em;
 }
 .projects__description a {
   font-size: 0.75rem;
@@ -412,6 +442,7 @@ footer {
   .container {
     max-width: 455px;
   }
+
   nav a {
     text-decoration: none;
     padding: 10px 20px;
@@ -547,6 +578,34 @@ footer {
   .container {
     max-width: 620px;
   }
+  .project__divider {
+    margin-bottom: 0;
+  }
+  .project__one {
+    flex-direction: row;
+  }
+  .project__two {
+    flex-direction: row-reverse;
+  }
+  .project__three {
+    flex-direction: row;
+  }
+  .project__four {
+    flex-direction: row-reverse;
+  }
+  .project__content {
+    padding: 20px;
+  }
+  .projects__container img {
+    width: 50%;
+  }
+  .description__one {
+    font-size: 0.75rem;
+  }
+  .description__two {
+    font-size: 0.75rem;
+  }
+
   .about__left {
     width: auto;
   }
@@ -573,11 +632,32 @@ footer {
   .container {
     max-width: 758px;
   }
+  .description__one {
+    font-size: 0.875rem;
+  }
+  .description__two {
+    font-size: 0.875rem;
+  }
+  .project__content h3 {
+    font-size: 1.125rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .container {
     max-width: 1004px;
+  }
+  .project__divider img {
+    max-width: 50%;
+  }
+  .description__one {
+    font-size: 1rem;
+  }
+  .description__two {
+    font-size: 1rem;
+  }
+  .project__content h3 {
+    font-size: 1.25rem;
   }
   .hero__img {
     width: 10rem;
@@ -662,6 +742,15 @@ footer {
   .container {
     max-width: 1260px;
   }
+  .description__one {
+    font-size: 1.125rem;
+  }
+  .description__two {
+    font-size: 1.125rem;
+  }
+  .project__content h3 {
+    font-size: 1.5rem;
+  }
   .hero__subtitle {
     font-size: 2.25rem;
   }
@@ -715,11 +804,18 @@ footer {
   .projects__container img {
     max-width: 660px;
   }
+  .projects__container {
+    width: 80%;
+    margin: 0 auto;
+  }
   .projects__description {
     font-size: 1.125rem;
   }
   .contact__title {
     font-size: 3rem;
+  }
+  .projects__description {
+    margin-top: 3rem;
   }
   .contact__subtitle {
     font-size: 1.25rem;
@@ -732,5 +828,8 @@ footer {
   }
   .journey__description {
     padding: 0 6rem;
+  }
+  .projects__container {
+    width: 70%;
   }
 }
